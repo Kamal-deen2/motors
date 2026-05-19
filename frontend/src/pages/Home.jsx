@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Truck, ArrowRight, Star, Shield, DollarSign, Clock } from 'lucide-react';
 import api from '../utils/axios';
