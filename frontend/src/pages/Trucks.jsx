@@ -192,7 +192,7 @@ const Trucks = () => {
             </button>
           </div>
 
-          <form onSubmit={handleSearch} className="grid grid-cols-5 gap-3 items-end">
+          <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-end">
             <div className="flex flex-col gap-2">
               <label className="text-[10.5px] tracking-[0.14em] uppercase text-white/40 font-normal">Brand</label>
               <select
@@ -394,7 +394,7 @@ const Trucks = () => {
                 </div>
               ) : (
                 <>
-                  <div className="grid grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-px bg-offWhDk">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-px bg-offWhDk">
                     {trucks.map((truck, index) => (
                       <FadeInSection key={truck.id} delay={index * 50}>
                         <div className="bg-white relative cursor-pointer group overflow-hidden transition-all duration-400 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/12">
