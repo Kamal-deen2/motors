@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DollarSign, ShoppingBag, Users, Truck, Plus, Edit, Trash2, Search, CheckCircle, X, Package } from 'lucide-react';
+import { Trash2, Edit, Plus, LogOut, Users, ShoppingBag, Settings, Layout } from 'lucide-react';
 import api from '../../utils/axios';
 import { useAuth } from '../../context/AuthContext';
 

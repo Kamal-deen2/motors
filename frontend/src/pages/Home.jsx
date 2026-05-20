@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Calendar, Gauge, Settings, Shield, Heart } from 'lucide-react';
+import { ArrowRight, Search, Menu, X, ChevronRight } from 'lucide-react';
+import { FadeInSection } from '../components/FadeInSection';
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);

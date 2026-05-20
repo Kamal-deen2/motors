@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Search, SlidersHorizontal, Heart, Calendar, Gauge, Settings, ArrowRight, X } from 'lucide-react';
-import api from '../utils/axios';
-import { useCart } from '../context/CartContext';
+import { Link, useParams } from 'react-router-dom';
+import { Search, SlidersHorizontal, ChevronDown, ShoppingCart, Heart } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
