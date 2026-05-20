@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Search, Menu, X, ChevronRight, Heart, Calendar, Gauge, Settings } from 'lucide-react';
 import FadeInSection from '../components/FadeInSection';
 
-const Counter = ({ end, duration = 2000 }) => {
+const Counter = ({ end, target, duration = 2000 }) => {
   const [count, setCount] = useState(0);
+  const value = end || target || 0;
 
   useEffect(() => {
     let startTime;
@@ -13,7 +14,7 @@ const Counter = ({ end, duration = 2000 }) => {
     const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * end));
+      setCount(Math.floor(progress * value));
       
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
@@ -22,7 +23,7 @@ const Counter = ({ end, duration = 2000 }) => {
 
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
-  }, [end, duration]);
+  }, [value, duration]);
 
   return count;
 };

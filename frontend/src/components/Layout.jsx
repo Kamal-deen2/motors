@@ -162,9 +162,9 @@ const Layout = ({ children }) => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden flex flex-col gap-1.5 w-7 cursor-pointer ml-auto"
             >
-              <span className={`h-[1px] bg-white transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-              <span className={`h-[1px] bg-white transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`h-[1px] bg-white transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+              <span className={`h-[2px] w-7 bg-white rounded transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-[5px]' : ''}`}></span>
+              <span className={`h-[2px] w-7 bg-white rounded transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`h-[2px] w-7 bg-white rounded transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`}></span>
             </button>
           </div>
         </div>
