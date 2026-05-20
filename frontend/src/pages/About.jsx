@@ -67,7 +67,7 @@ const About = () => {
         <div className="max-w-[1440px] mx-auto relative z-10">
           <FadeInSection>
             <div className="mb-6">
-              <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-4">About Us</span>
+              <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-4">About Us</span>
               <h1 className="font-cormorant text-[clamp(52px,6vw,86px)] font-light leading-[1.05] text-white tracking-[-0.01em] mb-6">
                 Our <em>Story</em>
               </h1>
@@ -111,7 +111,7 @@ const About = () => {
               <div className="bg-offWh rounded-lg h-[500px] flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-dark2/10 to-gold/10"></div>
                 <div className="text-center relative z-10">
-                  <div className="text-8xl font-cormorant text-goldDk/20">PM</div>
+                  <div className="text-8xl font-cormorant text-whiteDk/20">PM</div>
                   <div className="text-[12px] tracking-[0.2em] uppercase text-stone mt-4">Since 2010</div>
                 </div>
               </div>
@@ -126,8 +126,8 @@ const About = () => {
           <FadeInSection>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 sm:gap-12">
               <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
-                  <Award className="text-gold" size={36} />
+                <div className="w-20 h-20 rounded-full bg-black/10 flex items-center justify-center mx-auto mb-6">
+                  <Award className="text-white" size={36} />
                 </div>
                 <div className="font-mono text-[clamp(36px,4vw,52px)] font-medium text-white mb-3">
                   <Counter end={5000} duration={2500} />+
@@ -135,8 +135,8 @@ const About = () => {
                 <p className="text-[12.5px] tracking-[0.1em] uppercase text-white/60">Vehicles Sold</p>
               </div>
               <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
-                  <Users className="text-gold" size={36} />
+                <div className="w-20 h-20 rounded-full bg-black/10 flex items-center justify-center mx-auto mb-6">
+                  <Users className="text-white" size={36} />
                 </div>
                 <div className="font-mono text-[clamp(36px,4vw,52px)] font-medium text-white mb-3">
                   <Counter end={3000} duration={2500} />+
@@ -144,8 +144,8 @@ const About = () => {
                 <p className="text-[12.5px] tracking-[0.1em] uppercase text-white/60">Happy Clients</p>
               </div>
               <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
-                  <Globe className="text-gold" size={36} />
+                <div className="w-20 h-20 rounded-full bg-black/10 flex items-center justify-center mx-auto mb-6">
+                  <Globe className="text-white" size={36} />
                 </div>
                 <div className="font-mono text-[clamp(36px,4vw,52px)] font-medium text-white mb-3">
                   <Counter end={15} duration={2500} />+
@@ -153,8 +153,8 @@ const About = () => {
                 <p className="text-[12.5px] tracking-[0.1em] uppercase text-white/60">Years Experience</p>
               </div>
               <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-6">
-                  <Star className="text-gold" size={36} />
+                <div className="w-20 h-20 rounded-full bg-black/10 flex items-center justify-center mx-auto mb-6">
+                  <Star className="text-white" size={36} />
                 </div>
                 <div className="font-mono text-[clamp(36px,4vw,52px)] font-medium text-white mb-3">
                   <Counter end={9} duration={2500} />/10
@@ -179,8 +179,8 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div className="bg-white p-10 rounded-lg border border-offWhDk">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                    <Target className="text-goldDk" size={24} />
+                  <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center">
+                    <Target className="text-whiteDk" size={24} />
                   </div>
                   <h3 className="font-cormorant text-[26px] font-semibold text-dark2">Our Mission</h3>
                 </div>
@@ -192,26 +192,26 @@ const About = () => {
 
               <div className="bg-white p-10 rounded-lg border border-offWhDk">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                    <Heart className="text-goldDk" size={24} />
+                  <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center">
+                    <Heart className="text-whiteDk" size={24} />
                   </div>
                   <h3 className="font-cormorant text-[26px] font-semibold text-dark2">Our Values</h3>
                 </div>
                 <ul className="space-y-4 text-[15px] text-stone leading-[1.7]">
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-goldDk flex-shrink-0 mt-1" size={18} />
+                    <CheckCircle className="text-whiteDk flex-shrink-0 mt-1" size={18} />
                     <span><strong>Integrity:</strong> Honest and transparent in all our dealings</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-goldDk flex-shrink-0 mt-1" size={18} />
+                    <CheckCircle className="text-whiteDk flex-shrink-0 mt-1" size={18} />
                     <span><strong>Quality:</strong> Only the finest vehicles make it to our showroom</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-goldDk flex-shrink-0 mt-1" size={18} />
+                    <CheckCircle className="text-whiteDk flex-shrink-0 mt-1" size={18} />
                     <span><strong>Service:</strong> Client satisfaction is our top priority</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle className="text-goldDk flex-shrink-0 mt-1" size={18} />
+                    <CheckCircle className="text-whiteDk flex-shrink-0 mt-1" size={18} />
                     <span><strong>Expertise:</strong> Knowledgeable team to guide your purchase</span>
                   </li>
                 </ul>
@@ -232,9 +232,9 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-gold/30 hover:-translate-y-1 transition-all duration-400">
-                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-6">
-                  <Shield className="text-goldDk" size={28} />
+              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-black/30 hover:-translate-y-1 transition-all duration-400">
+                <div className="w-14 h-14 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                  <Shield className="text-whiteDk" size={28} />
                 </div>
                 <h3 className="font-cormorant text-[22px] font-semibold text-dark2 mb-4">Quality Assurance</h3>
                 <p className="text-[14px] text-stone leading-[1.7]">
@@ -242,9 +242,9 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-gold/30 hover:-translate-y-1 transition-all duration-400">
-                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-6">
-                  <Zap className="text-goldDk" size={28} />
+              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-black/30 hover:-translate-y-1 transition-all duration-400">
+                <div className="w-14 h-14 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                  <Zap className="text-whiteDk" size={28} />
                 </div>
                 <h3 className="font-cormorant text-[22px] font-semibold text-dark2 mb-4">Financing Options</h3>
                 <p className="text-[14px] text-stone leading-[1.7]">
@@ -252,9 +252,9 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-gold/30 hover:-translate-y-1 transition-all duration-400">
-                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-6">
-                  <Globe className="text-goldDk" size={28} />
+              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-black/30 hover:-translate-y-1 transition-all duration-400">
+                <div className="w-14 h-14 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                  <Globe className="text-whiteDk" size={28} />
                 </div>
                 <h3 className="font-cormorant text-[22px] font-semibold text-dark2 mb-4">Nationwide Delivery</h3>
                 <p className="text-[14px] text-stone leading-[1.7]">
@@ -262,9 +262,9 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-gold/30 hover:-translate-y-1 transition-all duration-400">
-                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-6">
-                  <Award className="text-goldDk" size={28} />
+              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-black/30 hover:-translate-y-1 transition-all duration-400">
+                <div className="w-14 h-14 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                  <Award className="text-whiteDk" size={28} />
                 </div>
                 <h3 className="font-cormorant text-[22px] font-semibold text-dark2 mb-4">Warranty Coverage</h3>
                 <p className="text-[14px] text-stone leading-[1.7]">
@@ -272,9 +272,9 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-gold/30 hover:-translate-y-1 transition-all duration-400">
-                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-6">
-                  <Users className="text-goldDk" size={28} />
+              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-black/30 hover:-translate-y-1 transition-all duration-400">
+                <div className="w-14 h-14 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                  <Users className="text-whiteDk" size={28} />
                 </div>
                 <h3 className="font-cormorant text-[22px] font-semibold text-dark2 mb-4">Expert Team</h3>
                 <p className="text-[14px] text-stone leading-[1.7]">
@@ -282,9 +282,9 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-gold/30 hover:-translate-y-1 transition-all duration-400">
-                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-6">
-                  <Heart className="text-goldDk" size={28} />
+              <div className="bg-offWh p-8 rounded-lg border border-offWhDk hover:border-black/30 hover:-translate-y-1 transition-all duration-400">
+                <div className="w-14 h-14 rounded-full bg-black/10 flex items-center justify-center mb-6">
+                  <Heart className="text-whiteDk" size={28} />
                 </div>
                 <h3 className="font-cormorant text-[22px] font-semibold text-dark2 mb-4">After-Sales Support</h3>
                 <p className="text-[14px] text-stone leading-[1.7]">
