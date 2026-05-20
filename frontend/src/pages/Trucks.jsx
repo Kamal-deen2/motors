@@ -150,7 +150,7 @@ const Trucks = () => {
       <section className="bg-dark2 py-16 px-20">
         <div className="max-w-[1440px] mx-auto">
           <div className="mb-14">
-            <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-3">Showroom</span>
+            <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-3">Showroom</span>
             <h1 className="font-cormorant text-[clamp(40px,5vw,64px)] font-light leading-[1.1] text-white tracking-[-0.01em]">
               Our <em>Inventory</em>
             </h1>
@@ -199,7 +199,7 @@ const Trucks = () => {
                 name="brand"
                 value={filters.brand}
                 onChange={handleFilterChange}
-                className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-gold transition-colors cursor-pointer"
+                className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-gray-200/9 focus:border-black transition-colors cursor-pointer"
               >
                 <option value="">Any Brand</option>
                 <option>BMW</option>
@@ -215,7 +215,7 @@ const Trucks = () => {
                 name="category"
                 value={filters.category}
                 onChange={handleFilterChange}
-                className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-gold transition-colors cursor-pointer"
+                className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-gray-200/9 focus:border-black transition-colors cursor-pointer"
               >
                 <option value="">Any Model</option>
                 {categories.map(cat => (
@@ -229,7 +229,7 @@ const Trucks = () => {
                 name="priceRange"
                 value={filters.priceRange}
                 onChange={handleFilterChange}
-                className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-gold transition-colors cursor-pointer"
+                className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-gray-200/9 focus:border-black transition-colors cursor-pointer"
               >
                 <option value="">Any Budget</option>
                 <option value="0-300000">Under R300,000</option>
@@ -244,7 +244,7 @@ const Trucks = () => {
                 name="year"
                 value={filters.year}
                 onChange={handleFilterChange}
-                className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-gold transition-colors cursor-pointer"
+                className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-gray-200/9 focus:border-black transition-colors cursor-pointer"
               >
                 <option value="">Any Year</option>
                 <option>2024</option>
@@ -256,7 +256,7 @@ const Trucks = () => {
             </div>
             <button
               type="submit"
-              className="bg-gold text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-7 py-3 rounded transition-all hover:bg-goldLt hover:-translate-y-0.5 flex items-center justify-center gap-2"
+              className="bg-white text-dark2 text-[12.5px] font-medium tracking-[0.1em] uppercase px-7 py-3 rounded transition-all hover:bg-gray-200 hover:-translate-y-0.5 flex items-center justify-center gap-2"
             >
               Search Vehicles
               <Search size={15} />
@@ -284,7 +284,7 @@ const Trucks = () => {
                   <h3 className="font-cormorant text-[20px] font-semibold text-dark2">Filters</h3>
                   <button
                     onClick={clearFilters}
-                    className="text-[11.5px] tracking-[0.1em] uppercase text-goldDk hover:text-gold"
+                    className="text-[11.5px] tracking-[0.1em] uppercase text-whiteDk hover:text-white"
                   >
                     Clear All
                   </button>
@@ -301,7 +301,7 @@ const Trucks = () => {
                       placeholder="e.g., BMW, Land Rover"
                       value={filters.brand}
                       onChange={handleFilterChange}
-                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors"
+                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors"
                     />
                   </div>
 
@@ -316,7 +316,7 @@ const Trucks = () => {
                         placeholder="Min"
                         value={filters.minPrice}
                         onChange={handleFilterChange}
-                        className="w-1/2 px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors"
+                        className="w-1/2 px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors"
                       />
                       <input
                         type="number"
@@ -324,7 +324,7 @@ const Trucks = () => {
                         placeholder="Max"
                         value={filters.maxPrice}
                         onChange={handleFilterChange}
-                        className="w-1/2 px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors"
+                        className="w-1/2 px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors"
                       />
                     </div>
                   </div>
@@ -339,7 +339,7 @@ const Trucks = () => {
                       placeholder="e.g., 2022"
                       value={filters.year}
                       onChange={handleFilterChange}
-                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors"
+                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors"
                     />
                   </div>
 
@@ -351,7 +351,7 @@ const Trucks = () => {
                       name="condition"
                       value={filters.condition}
                       onChange={handleFilterChange}
-                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors cursor-pointer"
+                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors cursor-pointer"
                     >
                       <option value="">All Conditions</option>
                       <option value="New">New</option>
@@ -387,7 +387,7 @@ const Trucks = () => {
                   <p className="text-stone text-lg font-cormorant">No vehicles found matching your criteria</p>
                   <button
                     onClick={clearFilters}
-                    className="mt-4 text-goldDk hover:text-gold font-medium"
+                    className="mt-4 text-whiteDk hover:text-white font-medium"
                   >
                     Clear filters
                   </button>
@@ -418,7 +418,7 @@ const Trucks = () => {
                               {truck.condition}
                             </span>
                             {truck.isFeatured && (
-                              <span className="absolute top-3.5 right-3.5 text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded bg-gold text-white">
+                              <span className="absolute top-3.5 right-3.5 text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded bg-white text-white">
                                 Featured
                               </span>
                             )}
@@ -462,7 +462,7 @@ const Trucks = () => {
                               </div>
                               <Link
                                 to={`/trucks/${truck.id}`}
-                                className="flex items-center gap-1.5 text-[12px] font-medium tracking-[0.06em] text-goldDk group-hover:text-gold group-hover:gap-3 transition-all"
+                                className="flex items-center gap-1.5 text-[12px] font-medium tracking-[0.06em] text-whiteDk group-hover:text-white group-hover:gap-3 transition-all"
                               >
                                 View Details
                                 <ArrowRight size={14} />
@@ -480,7 +480,7 @@ const Trucks = () => {
                       <button
                         onClick={() => setPagination({ ...pagination, page: pagination.page - 1 })}
                         disabled={pagination.page === 1}
-                        className="px-4 py-2 border border-offWhDk rounded hover:border-gold hover:text-gold disabled:opacity-50 disabled:cursor-not-allowed text-[12.5px] transition-colors"
+                        className="px-4 py-2 border border-offWhDk rounded hover:border-white hover:text-white disabled:opacity-50 disabled:cursor-not-allowed text-[12.5px] transition-colors"
                       >
                         Previous
                       </button>
@@ -492,8 +492,8 @@ const Trucks = () => {
                             onClick={() => setPagination({ ...pagination, page: pageNum })}
                             className={`px-4 py-2 border border-offWhDk rounded text-[12.5px] transition-colors ${
                               pagination.page === pageNum
-                                ? 'bg-gold text-white border-gold'
-                                : 'hover:border-gold hover:text-gold'
+                                ? 'bg-black text-white border-black'
+                                : 'hover:border-white hover:text-white'
                             }`}
                           >
                             {pageNum}
@@ -507,8 +507,8 @@ const Trucks = () => {
                             onClick={() => setPagination({ ...pagination, page: pagination.pages })}
                             className={`px-4 py-2 border border-offWhDk rounded text-[12.5px] transition-colors ${
                               pagination.page === pagination.pages
-                                ? 'bg-gold text-white border-gold'
-                                : 'hover:border-gold hover:text-gold'
+                                ? 'bg-black text-white border-black'
+                                : 'hover:border-white hover:text-white'
                             }`}
                           >
                             {pagination.pages}
@@ -518,7 +518,7 @@ const Trucks = () => {
                       <button
                         onClick={() => setPagination({ ...pagination, page: pagination.page + 1 })}
                         disabled={pagination.page === pagination.pages}
-                        className="px-4 py-2 border border-offWhDk rounded hover:border-gold hover:text-gold disabled:opacity-50 disabled:cursor-not-allowed text-[12.5px] transition-colors"
+                        className="px-4 py-2 border border-offWhDk rounded hover:border-white hover:text-white disabled:opacity-50 disabled:cursor-not-allowed text-[12.5px] transition-colors"
                       >
                         Next
                       </button>
