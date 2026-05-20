@@ -110,7 +110,7 @@ const TruckDetail = () => {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-offWhDk">
         <div className="max-w-[1440px] mx-auto px-20 py-4">
-          <Link to="/trucks" className="flex items-center text-stone hover:text-goldDk transition-colors">
+          <Link to="/trucks" className="flex items-center text-stone hover:text-whiteDk transition-colors">
             <ArrowLeft size={16} className="mr-2" />
             <span className="text-[12.5px] tracking-[0.06em] uppercase">Back to Showroom</span>
           </Link>
@@ -190,7 +190,7 @@ const TruckDetail = () => {
             <FadeInSection delay={100}>
               <div>
                 <div className="mb-6">
-                  <div className="text-[10.5px] tracking-[0.14em] uppercase text-gold mb-2">{truck.brand || 'Brand'}</div>
+                  <div className="text-[10.5px] tracking-[0.14em] uppercase text-white mb-2">{truck.brand || 'Brand'}</div>
                   <h1 className="font-cormorant text-[clamp(36px,4vw,52px)] font-light leading-[1.1] text-dark2 mb-3">
                     {truck.title}
                   </h1>
@@ -213,17 +213,17 @@ const TruckDetail = () => {
                 {/* Quick Specs */}
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   <div className="bg-white p-4 rounded-lg border border-offWhDk text-center">
-                    <Calendar size={20} className="text-goldDk mx-auto mb-2" />
+                    <Calendar size={20} className="text-whiteDk mx-auto mb-2" />
                     <div className="text-[10.5px] tracking-[0.1em] uppercase text-stoneMd mb-1">Year</div>
                     <div className="font-mono text-[16px] text-dark2">{truck.year || 'N/A'}</div>
                   </div>
                   <div className="bg-white p-4 rounded-lg border border-offWhDk text-center">
-                    <Gauge size={20} className="text-goldDk mx-auto mb-2" />
+                    <Gauge size={20} className="text-whiteDk mx-auto mb-2" />
                     <div className="text-[10.5px] tracking-[0.1em] uppercase text-stoneMd mb-1">Mileage</div>
                     <div className="font-mono text-[16px] text-dark2">{truck.mileage?.toLocaleString() || 'N/A'}</div>
                   </div>
                   <div className="bg-white p-4 rounded-lg border border-offWhDk text-center">
-                    <Fuel size={20} className="text-goldDk mx-auto mb-2" />
+                    <Fuel size={20} className="text-whiteDk mx-auto mb-2" />
                     <div className="text-[10.5px] tracking-[0.1em] uppercase text-stoneMd mb-1">Fuel</div>
                     <div className="font-mono text-[16px] text-dark2">{truck.fuelType || 'N/A'}</div>
                   </div>
@@ -241,13 +241,13 @@ const TruckDetail = () => {
                   <button
                     onClick={handleAddToCart}
                     disabled={!truck.isAvailable}
-                    className="px-5 py-4 border border-offWhDk rounded hover:border-gold hover:text-gold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-5 py-4 border border-offWhDk rounded hover:border-black hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     title="Save to favorites"
                   >
                     <Heart size={20} />
                   </button>
                   <button
-                    className="px-5 py-4 border border-offWhDk rounded hover:border-gold hover:text-gold transition-colors"
+                    className="px-5 py-4 border border-offWhDk rounded hover:border-black hover:text-white transition-colors"
                     title="Share"
                   >
                     <Share2 size={20} />
@@ -293,29 +293,29 @@ const TruckDetail = () => {
                 <button
                   onClick={() => setSelectedTab('overview')}
                   className={`text-[12.5px] font-medium tracking-[0.1em] uppercase pb-4 relative transition-colors ${
-                    selectedTab === 'overview' ? 'text-goldDk' : 'text-stone hover:text-dark2'
+                    selectedTab === 'overview' ? 'text-whiteDk' : 'text-stone hover:text-dark2'
                   }`}
                 >
                   Overview
-                  {selectedTab === 'overview' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold"></div>}
+                  {selectedTab === 'overview' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"></div>}
                 </button>
                 <button
                   onClick={() => setSelectedTab('specs')}
                   className={`text-[12.5px] font-medium tracking-[0.1em] uppercase pb-4 relative transition-colors ${
-                    selectedTab === 'specs' ? 'text-goldDk' : 'text-stone hover:text-dark2'
+                    selectedTab === 'specs' ? 'text-whiteDk' : 'text-stone hover:text-dark2'
                   }`}
                 >
                   Specifications
-                  {selectedTab === 'specs' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold"></div>}
+                  {selectedTab === 'specs' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"></div>}
                 </button>
                 <button
                   onClick={() => setSelectedTab('features')}
                   className={`text-[12.5px] font-medium tracking-[0.1em] uppercase pb-4 relative transition-colors ${
-                    selectedTab === 'features' ? 'text-goldDk' : 'text-stone hover:text-dark2'
+                    selectedTab === 'features' ? 'text-whiteDk' : 'text-stone hover:text-dark2'
                   }`}
                 >
                   Features
-                  {selectedTab === 'features' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold"></div>}
+                  {selectedTab === 'features' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"></div>}
                 </button>
               </div>
             </div>
@@ -374,14 +374,14 @@ const TruckDetail = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-offWh p-6 rounded-lg">
                   <div className="flex items-center gap-3 mb-2">
-                    <Settings size={20} className="text-goldDk" />
+                    <Settings size={20} className="text-whiteDk" />
                     <div className="text-[10.5px] tracking-[0.14em] uppercase text-stoneMd">Interior</div>
                   </div>
                   <div className="text-[14px] text-dark2">Leather seats, Climate control, Premium audio system</div>
                 </div>
                 <div className="bg-offWh p-6 rounded-lg">
                   <div className="flex items-center gap-3 mb-2">
-                    <Cog size={20} className="text-goldDk" />
+                    <Cog size={20} className="text-whiteDk" />
                     <div className="text-[10.5px] tracking-[0.14em] uppercase text-stoneMd">Safety</div>
                   </div>
                   <div className="text-[14px] text-dark2">ABS, Airbags, Parking sensors, Cruise control</div>
@@ -431,7 +431,7 @@ const TruckDetail = () => {
             <div className="text-center mt-12">
               <Link
                 to="/contact"
-                className="inline-block bg-gold text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-10 py-4 rounded hover:bg-goldLt transition-colors"
+                className="inline-block bg-black text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-10 py-4 rounded hover:bg-gray-800 transition-colors"
               >
                 Contact for Financing
               </Link>
