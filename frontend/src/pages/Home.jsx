@@ -163,7 +163,7 @@ const Home = () => {
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 w-full">
             <FadeInSection>
               <h1
-                className="font-cormorant text-[clamp(36px,5vw,64px)] sm:text-[clamp(40px,5vw,68px)] lg:text-[clamp(52px,6vw,86px)] font-light text-white leading-[1.05] mb-4 sm:mb-6"
+                className="font-cormorant text-[clamp(36px,5vw,64px)] sm:text-[clamp(40px,5vw,68px)] lg:text-[clamp(52px,6vw,86px)] font-light leading-[1.05] mb-4 sm:mb-6"
                 dangerouslySetInnerHTML={{ __html: heroTitle }}
               />
               <p className="text-[14px] sm:text-[16px] md:text-[18px] text-white/70 mb-6 sm:mb-8 md:mb-10 max-w-[500px] sm:max-w-[600px] leading-relaxed">
@@ -172,7 +172,7 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   to="/trucks"
-                  className="bg-gold text-white px-6 sm:px-8 py-3 sm:py-4 rounded text-[12px] sm:text-[13px] font-medium tracking-[0.06em] uppercase hover:bg-goldLt transition-colors text-center"
+                  className="bg-white text-dark2 px-6 sm:px-8 py-3 sm:py-4 rounded text-[12px] sm:text-[13px] font-medium tracking-[0.06em] uppercase hover:bg-gray-200 transition-colors text-center"
                 >
                   Explore Vehicles
                 </Link>
@@ -194,7 +194,7 @@ const Home = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-8 sm:w-12 h-[2px] rounded-full transition-all ${
-                index === currentSlide ? 'bg-gold w-8 sm:w-12' : 'bg-white/30 w-6 sm:w-8'
+                index === currentSlide ? 'bg-white w-8 sm:w-12' : 'bg-white/30 w-6 sm:w-8'
               }`}
             />
           ))}
@@ -239,7 +239,7 @@ const Home = () => {
           <div className="grid grid-cols-5 gap-3 items-end">
             <div className="flex flex-col gap-2">
               <label className="text-[10.5px] tracking-[0.14em] uppercase text-white/40 font-normal">Brand</label>
-              <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-gold transition-colors cursor-pointer">
+              <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-white transition-colors cursor-pointer">
                 <option value="">Any Brand</option>
                 <option>BMW</option>
                 <option>Land Rover</option>
@@ -250,7 +250,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[10.5px] tracking-[0.14em] uppercase text-white/40 font-normal">Model</label>
-              <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-gold transition-colors cursor-pointer">
+              <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-white transition-colors cursor-pointer">
                 <option value="">Any Model</option>
                 <option>3 Series</option>
                 <option>5 Series</option>
@@ -261,7 +261,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[10.5px] tracking-[0.14em] uppercase text-white/40 font-normal">Price Range</label>
-              <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-gold transition-colors cursor-pointer">
+              <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-white transition-colors cursor-pointer">
                 <option value="">Any Budget</option>
                 <option>Under R300,000</option>
                 <option>R300k – R600k</option>
@@ -271,7 +271,7 @@ const Home = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label className="text-[10.5px] tracking-[0.14em] uppercase text-white/40 font-normal">Year</label>
-              <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-gold transition-colors cursor-pointer">
+              <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-white transition-colors cursor-pointer">
                 <option value="">Any Year</option>
                 <option>2024</option>
                 <option>2023</option>
@@ -279,7 +279,7 @@ const Home = () => {
                 <option>2021</option>
               </select>
             </div>
-            <button className="bg-gold text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-7 py-3 rounded transition-all hover:bg-goldLt hover:-translate-y-0.5 flex items-center justify-center gap-2">
+            <button className="bg-white text-dark2 text-[12.5px] font-medium tracking-[0.1em] uppercase px-7 py-3 rounded transition-all hover:bg-gray-200 hover:-translate-y-0.5 flex items-center justify-center gap-2">
               Search Vehicles
               <ArrowRight size={15} />
             </button>
@@ -307,7 +307,7 @@ const Home = () => {
       <section className="py-24 px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <div className="mb-14">
-            <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-3">Featured</span>
+            <span className="text-[10.5px] tracking-[0.18em] uppercase text-gray-600 block mb-3">Featured</span>
             <h2 className="font-cormorant text-[clamp(36px,4vw,52px)] font-light leading-[1.15] text-dark2 tracking-[-0.01em]">
               Latest <em>Arrivals</em>
             </h2>
@@ -331,7 +331,7 @@ const Home = () => {
                       {vehicle.condition}
                     </span>
                     {vehicle.featured && (
-                      <span className="absolute top-3.5 right-3.5 text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded bg-gold text-white">
+                      <span className="absolute top-3.5 right-3.5 text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded bg-white text-dark2">
                         Featured
                       </span>
                     )}
@@ -370,7 +370,7 @@ const Home = () => {
                         </div>
                         <div className="text-[11px] text-stoneMd mt-0.5">From R{Math.round(vehicle.price / 72).toLocaleString()} p/m</div>
                       </div>
-                      <div className="flex items-center gap-1.5 text-[12px] font-medium tracking-[0.06em] text-goldDk group-hover:text-gold group-hover:gap-3 transition-all">
+                      <div className="flex items-center gap-1.5 text-[12px] font-medium tracking-[0.06em] text-whiteDk group-hover:text-white group-hover:gap-3 transition-all">
                         View Details
                         <ArrowRight size={14} />
                       </div>
@@ -384,7 +384,7 @@ const Home = () => {
           <div className="mt-12">
             <Link
               to="/trucks"
-              className="inline-flex items-center gap-2 text-[12.5px] tracking-[0.1em] uppercase text-goldDk font-medium hover:gap-4 transition-all"
+              className="inline-flex items-center gap-2 text-[12.5px] tracking-[0.1em] uppercase text-whiteDk font-medium hover:gap-4 transition-all"
             >
               View All Vehicles
               <ArrowRight size={14} />
@@ -417,7 +417,7 @@ const Home = () => {
       <section className="py-24 px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <div className="mb-14">
-            <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-3">Stories & Insights</span>
+            <span className="text-[10.5px] tracking-[0.18em] uppercase text-gray-600 block mb-3">Stories & Insights</span>
             <h2 className="font-cormorant text-[clamp(36px,4vw,52px)] font-light leading-[1.15] text-dark2 tracking-[-0.01em]">
               News & <em>Blog</em>
             </h2>
@@ -434,8 +434,8 @@ const Home = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-106"
                     />
                   </div>
-                  <span className="text-[10px] tracking-[0.16em] uppercase text-gold mb-2 block font-medium">{item.tag}</span>
-                  <h3 className="font-cormorant text-[21px] font-normal text-dark2 leading-[1.4] mb-3 transition-colors group-hover:text-goldDk">
+                  <span className="text-[10px] tracking-[0.16em] uppercase text-white mb-2 block font-medium">{item.tag}</span>
+                  <h3 className="font-cormorant text-[21px] font-normal text-dark2 leading-[1.4] mb-3 transition-colors group-hover:text-whiteDk">
                     {item.title}
                   </h3>
                   <p className="text-[13.5px] text-stone leading-[1.7] font-light mb-4">{item.excerpt}</p>
@@ -463,7 +463,7 @@ const Home = () => {
           </p>
           <Link
             to="/trucks"
-            className="inline-block bg-gold text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-8 py-3.5 rounded transition-all hover:bg-goldLt hover:-translate-y-0.5 shadow-lg"
+            className="inline-block bg-white text-dark2 text-[12.5px] font-medium tracking-[0.1em] uppercase px-8 py-3.5 rounded transition-all hover:bg-gray-200 hover:-translate-y-0.5 shadow-lg"
           >
             Browse Inventory
           </Link>
