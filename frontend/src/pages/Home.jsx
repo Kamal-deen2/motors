@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Search, Menu, X, ChevronRight, Heart, Calendar, Gauge, Settings } from 'lucide-react';
-import { FadeInSection } from '../components/FadeInSection';
+import FadeInSection from '../components/FadeInSection';
 
 const Counter = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0);
