@@ -92,7 +92,7 @@ const TruckDetail = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-cream flex items-center justify-center pt-[72px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
       </div>
     );
   }
@@ -171,7 +171,7 @@ const TruckDetail = () => {
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
                         className={`rounded-lg overflow-hidden border-2 transition-all ${
-                          currentImageIndex === index ? 'border-gold opacity-100' : 'border-transparent opacity-60 hover:opacity-100'
+                          currentImageIndex === index ? 'border-black opacity-100' : 'border-transparent opacity-60 hover:opacity-100'
                         }`}
                       >
                         <img

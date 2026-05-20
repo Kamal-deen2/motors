@@ -380,7 +380,7 @@ const Trucks = () => {
 
               {loading ? (
                 <div className="text-center py-20">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold mx-auto"></div>
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto"></div>
                 </div>
               ) : trucks.length === 0 ? (
                 <div className="text-center py-20 bg-white rounded-lg border border-offWhDk">
