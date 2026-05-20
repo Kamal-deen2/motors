@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
     <div className="min-h-screen flex flex-col bg-cream font-dm">
       {/* Navigation */}
       {!isAuthPage && (
-        <nav className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-400 ${scrolled ? 'bg-black/97 backdrop-blur-md shadow-lg' : ''}`}>
+        <nav className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-400 ${scrolled ? 'bg-black/97 backdrop-blur-md shadow-lg' : 'bg-black/85'}`}>
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 h-full flex items-center gap-6 md:gap-10">
             {/* Logo */}
             <Link to="/" className="font-cormorant text-[18px] sm:text-[20px] md:text-[22px] font-semibold text-white tracking-[0.12em] uppercase flex-shrink-0 cursor-pointer">
