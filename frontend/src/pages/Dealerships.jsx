@@ -121,7 +121,7 @@ const Dealerships = () => {
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="mb-6">
-              <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-4">Our Locations</span>
+              <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-4">Our Locations</span>
               <h1 className="font-cormorant text-[clamp(52px,6vw,86px)] font-light leading-[1.05] text-white tracking-[-0.01em] mb-6">
                 Find a <em>Showroom</em>
               </h1>
@@ -183,29 +183,29 @@ const Dealerships = () => {
                     
                     <div className="space-y-4 mb-6">
                       <div className="flex items-start gap-3">
-                        <MapPin className="text-goldDk flex-shrink-0 mt-0.5" size={18} />
+                        <MapPin className="text-whiteDk flex-shrink-0 mt-0.5" size={18} />
                         <p className="text-[14px] text-stone leading-[1.6]">{dealership.address}</p>
                       </div>
                       
                       <div className="flex items-center gap-3">
-                        <Phone className="text-goldDk flex-shrink-0" size={18} />
+                        <Phone className="text-whiteDk flex-shrink-0" size={18} />
                         <p className="text-[14px] text-stone">{dealership.phone}</p>
                       </div>
                       
                       <div className="flex items-center gap-3">
-                        <Mail className="text-goldDk flex-shrink-0" size={18} />
+                        <Mail className="text-whiteDk flex-shrink-0" size={18} />
                         <p className="text-[14px] text-stone">{dealership.email}</p>
                       </div>
                       
                       <div className="flex items-start gap-3">
-                        <Clock className="text-goldDk flex-shrink-0 mt-0.5" size={18} />
+                        <Clock className="text-whiteDk flex-shrink-0 mt-0.5" size={18} />
                         <p className="text-[14px] text-stone leading-[1.6] whitespace-pre-line">{dealership.hours}</p>
                       </div>
                     </div>
                     
                     <Link
                       to="/contact"
-                      className="flex items-center gap-2 text-[12px] font-medium tracking-[0.06em] text-goldDk hover:text-gold hover:gap-3 transition-all"
+                      className="flex items-center gap-2 text-[12px] font-medium tracking-[0.06em] text-whiteDk hover:text-white hover:gap-3 transition-all"
                     >
                       Contact Showroom
                       <ArrowRight size={14} />
@@ -230,7 +230,7 @@ const Dealerships = () => {
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-4">National Coverage</span>
+                <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-4">National Coverage</span>
                 <h2 className="font-cormorant text-[clamp(40px,5vw,64px)] font-light text-dark2 mb-6">
                   Find Us <em>Nationwide</em>
                 </h2>
@@ -239,19 +239,19 @@ const Dealerships = () => {
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center gap-3 text-[14px] text-stone">
-                    <div className="w-2 h-2 rounded-full bg-gold"></div>
+                    <div className="w-2 h-2 rounded-full bg-black"></div>
                     6 Premium Showrooms Nationwide
                   </li>
                   <li className="flex items-center gap-3 text-[14px] text-stone">
-                    <div className="w-2 h-2 rounded-full bg-gold"></div>
+                    <div className="w-2 h-2 rounded-full bg-black"></div>
                     Expert Sales Team at Each Location
                   </li>
                   <li className="flex items-center gap-3 text-[14px] text-stone">
-                    <div className="w-2 h-2 rounded-full bg-gold"></div>
+                    <div className="w-2 h-2 rounded-full bg-black"></div>
                     Full Service and Maintenance Centers
                   </li>
                   <li className="flex items-center gap-3 text-[14px] text-stone">
-                    <div className="w-2 h-2 rounded-full bg-gold"></div>
+                    <div className="w-2 h-2 rounded-full bg-black"></div>
                     Flexible Financing Options Available
                   </li>
                 </ul>
@@ -266,7 +266,7 @@ const Dealerships = () => {
               
               <div className="bg-offWh rounded-lg h-[500px] flex items-center justify-center relative overflow-hidden">
                 <div className="text-center">
-                  <MapPin size={64} className="text-goldDk/30 mx-auto mb-4" />
+                  <MapPin size={64} className="text-whiteDk/30 mx-auto mb-4" />
                   <div className="text-[14px] text-stone">Interactive Map</div>
                   <div className="text-[12px] text-stoneMd mt-2">Select a showroom to view location</div>
                 </div>
@@ -289,7 +289,7 @@ const Dealerships = () => {
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 bg-gold text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-10 py-4 rounded hover:bg-goldLt transition-colors"
+                className="inline-flex items-center gap-3 bg-black text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-10 py-4 rounded hover:bg-gray-800 transition-colors"
               >
                 Schedule an Appointment
                 <ArrowRight size={16} />
