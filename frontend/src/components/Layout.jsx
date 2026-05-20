@@ -29,133 +29,133 @@ const Layout = ({ children }) => {
       {/* Navigation */}
       {!isAuthPage && (
         <nav className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-400 ${scrolled ? 'bg-black/97 backdrop-blur-md shadow-lg' : ''}`}>
-        <div className="max-w-[1440px] mx-auto px-10 h-full flex items-center gap-10">
-          {/* Logo */}
-          <Link to="/" className="font-cormorant text-[22px] font-semibold text-white tracking-[0.12em] uppercase flex-shrink-0 cursor-pointer">
-            PRIME<span className="text-goldLt">.</span>
-          </Link>
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 h-full flex items-center gap-6 md:gap-10">
+            {/* Logo */}
+            <Link to="/" className="font-cormorant text-[18px] sm:text-[20px] md:text-[22px] font-semibold text-white tracking-[0.12em] uppercase flex-shrink-0 cursor-pointer">
+              PRIME<span className="text-goldLt">.</span>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-1 flex-1">
-            <ul className="hidden lg:flex items-center gap-8">
-              <li>
-                <Link to="/trucks" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
-                  Showroom
-                </Link>
-              </li>
-              <li
-                className="relative group"
-                onMouseEnter={() => setHoveredMenu('about')}
-                onMouseLeave={() => setHoveredMenu(null)}
-              >
-                <button className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors flex items-center gap-1">
-                  About
-                  <ChevronDown size={14} className={`transition-transform ${hoveredMenu === 'about' ? 'rotate-180' : ''}`} />
-                </button>
-                
-                {/* Mega Menu */}
-                {hoveredMenu === 'about' && (
-                  <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[600px] bg-white rounded-lg shadow-2xl shadow-black/12 py-6 px-8 z-50">
-                    <div className="grid grid-cols-2 gap-8">
-                      <div>
-                        <div className="text-[10.5px] tracking-[0.14em] uppercase text-stoneMd mb-4 font-medium">Company</div>
-                        <ul className="space-y-3">
-                          <li>
-                            <Link to="/about" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">Our Story</Link>
-                          </li>
-                          <li>
-                            <Link to="/about" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">Our Team</Link>
-                          </li>
-                          <li>
-                            <Link to="/about" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">Careers</Link>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <div className="text-[10.5px] tracking-[0.14em] uppercase text-stoneMd mb-4 font-medium">Resources</div>
-                        <ul className="space-y-3">
-                          <li>
-                            <Link to="/news" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">News & Insights</Link>
-                          </li>
-                          <li>
-                            <Link to="/contact" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">Contact Us</Link>
-                          </li>
-                          <li>
-                            <Link to="/contact" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">FAQ</Link>
-                          </li>
-                        </ul>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex gap-1 flex-1">
+              <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
+                <li>
+                  <Link to="/trucks" className="text-[11.5px] sm:text-[12px] md:text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                    Showroom
+                  </Link>
+                </li>
+                <li
+                  className="relative group"
+                  onMouseEnter={() => setHoveredMenu('about')}
+                  onMouseLeave={() => setHoveredMenu(null)}
+                >
+                  <button className="text-[11.5px] sm:text-[12px] md:text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors flex items-center gap-1">
+                    About
+                    <ChevronDown size={14} className={`transition-transform ${hoveredMenu === 'about' ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {/* Mega Menu */}
+                  {hoveredMenu === 'about' && (
+                    <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[90vw] max-w-[600px] bg-white rounded-lg shadow-2xl shadow-black/12 py-6 px-6 sm:px-8 z-50">
+                      <div className="grid grid-cols-2 gap-6 sm:gap-8">
+                        <div>
+                          <div className="text-[10px] sm:text-[10.5px] tracking-[0.14em] uppercase text-stoneMd mb-3 sm:mb-4 font-medium">Company</div>
+                          <ul className="space-y-2 sm:space-y-3">
+                            <li>
+                              <Link to="/about" className="text-[13px] sm:text-[14px] text-dark2 hover:text-goldDk transition-colors">Our Story</Link>
+                            </li>
+                            <li>
+                              <Link to="/about" className="text-[13px] sm:text-[14px] text-dark2 hover:text-goldDk transition-colors">Our Team</Link>
+                            </li>
+                            <li>
+                              <Link to="/about" className="text-[13px] sm:text-[14px] text-dark2 hover:text-goldDk transition-colors">Careers</Link>
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <div className="text-[10px] sm:text-[10.5px] tracking-[0.14em] uppercase text-stoneMd mb-3 sm:mb-4 font-medium">Resources</div>
+                          <ul className="space-y-2 sm:space-y-3">
+                            <li>
+                              <Link to="/news" className="text-[13px] sm:text-[14px] text-dark2 hover:text-goldDk transition-colors">News & Insights</Link>
+                            </li>
+                            <li>
+                              <Link to="/contact" className="text-[13px] sm:text-[14px] text-dark2 hover:text-goldDk transition-colors">Contact Us</Link>
+                            </li>
+                            <li>
+                              <Link to="/contact" className="text-[13px] sm:text-[14px] text-dark2 hover:text-goldDk transition-colors">FAQ</Link>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
+                </li>
+                <li>
+                  <Link to="/brands" className="text-[11.5px] sm:text-[12px] md:text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                    Brands
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dealerships" className="text-[11.5px] sm:text-[12px] md:text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                    Dealerships
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/news" className="text-[11.5px] sm:text-[12px] md:text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                    News
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-[11.5px] sm:text-[12px] md:text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+              <div className="hidden md:flex items-center gap-3 ml-auto flex-shrink-0">
+                <Link to="/trucks" className="w-9.5 h-9.5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/8 rounded-full transition-colors">
+                  <Search size={17} />
+                </Link>
+                {user ? (
+                  <>
+                    <Link to="/cart" className="relative text-white/72 hover:text-white">
+                      <ShoppingCart size={20} />
+                      {cart.count > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                          {cart.count}
+                        </span>
+                      )}
+                    </Link>
+                    <Link to="/dashboard" className="text-white/72 hover:text-white">
+                      <User size={20} />
+                    </Link>
+                    <button
+                      onClick={logout}
+                      className="text-[12px] text-white/70 border border-white/25 px-5 py-2 rounded hover:border-white hover:text-white transition-colors uppercase tracking-[0.06em]"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/cart" className="relative text-white/72 hover:text-white">
+                      <ShoppingCart size={20} />
+                      {cart.count > 0 && (
+                        <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                          {cart.count}
+                        </span>
+                      )}
+                    </Link>
+                    <Link to="/login" className="text-[12px] text-white/70 border border-white/25 px-5 py-2 rounded hover:border-white hover:text-white transition-colors uppercase tracking-[0.06em]">
+                      Login
+                    </Link>
+                    <Link
+                      to="/register"
+                      className="text-[12px] bg-gold text-white px-5 py-2 rounded hover:bg-goldLt transition-colors uppercase tracking-[0.06em]"
+                    >
+                      Register
+                    </Link>
+                  </>
                 )}
-              </li>
-              <li>
-                <Link to="/brands" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
-                  Brands
-                </Link>
-              </li>
-              <li>
-                <Link to="/dealerships" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
-                  Dealerships
-                </Link>
-              </li>
-              <li>
-                <Link to="/news" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
-                  News
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-            <div className="hidden md:flex items-center gap-3 ml-auto flex-shrink-0">
-              <Link to="/trucks" className="w-9.5 h-9.5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/8 rounded-full transition-colors">
-                <Search size={17} />
-              </Link>
-              {user ? (
-                <>
-                  <Link to="/cart" className="relative text-white/72 hover:text-white">
-                    <ShoppingCart size={20} />
-                    {cart.count > 0 && (
-                      <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                        {cart.count}
-                      </span>
-                    )}
-                  </Link>
-                  <Link to="/dashboard" className="text-white/72 hover:text-white">
-                    <User size={20} />
-                  </Link>
-                  <button
-                    onClick={logout}
-                    className="text-[12px] text-white/70 border border-white/25 px-5 py-2 rounded hover:border-white hover:text-white transition-colors uppercase tracking-[0.06em]"
-                  >
-                    Logout
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link to="/cart" className="relative text-white/72 hover:text-white">
-                    <ShoppingCart size={20} />
-                    {cart.count > 0 && (
-                      <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                        {cart.count}
-                      </span>
-                    )}
-                  </Link>
-                  <Link to="/login" className="text-[12px] text-white/70 border border-white/25 px-5 py-2 rounded hover:border-white hover:text-white transition-colors uppercase tracking-[0.06em]">
-                    Login
-                  </Link>
-                  <Link
-                    to="/register"
-                    className="text-[12px] bg-gold text-white px-5 py-2 rounded hover:bg-goldLt transition-colors uppercase tracking-[0.06em]"
-                  >
-                    Register
-                  </Link>
-                </>
-              )}
-            </div>
+              </div>
 
             {/* Mobile menu button */}
             <button
@@ -206,9 +206,9 @@ const Layout = ({ children }) => {
 
       {/* Footer */}
       {!isAuthPage && !isAdminPage && (
-        <footer className="bg-dark1 text-white pt-20 pb-10 px-20 border-t border-white/6">
+        <footer className="bg-dark1 text-white pt-16 sm:pt-20 pb-8 sm:pb-10 px-4 sm:px-6 md:px-10 lg:px-20 border-t border-white/6">
           <div className="max-w-[1440px] mx-auto">
-            <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-16 mb-18">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-18">
               {/* Brand */}
               <div>
                 <div className="font-cormorant text-[20px] font-semibold text-white tracking-[0.12em] uppercase mb-4">
