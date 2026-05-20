@@ -76,7 +76,7 @@ const Contact = () => {
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="mb-6">
-              <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-4">Contact</span>
+              <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-4">Contact</span>
               <h1 className="font-cormorant text-[clamp(52px,6vw,86px)] font-light leading-[1.05] text-white tracking-[-0.01em] mb-6">
                 Get in <em>Touch</em>
             </h1>
@@ -122,7 +122,7 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors"
+                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors"
                     />
                   </div>
 
@@ -136,7 +136,7 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors"
+                      className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors"
                     />
                   </div>
                 </div>
@@ -151,7 +151,7 @@ const Contact = () => {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors"
+                    className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors"
                   />
                 </div>
 
@@ -165,7 +165,7 @@ const Contact = () => {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors"
+                    className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors"
                   />
                 </div>
 
@@ -179,7 +179,7 @@ const Contact = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-gold transition-colors resize-none"
+                    className="w-full px-4 py-3 border border-offWhDk rounded text-[14px] text-dark2 outline-none focus:border-black transition-colors resize-none"
                   />
                 </div>
 
@@ -203,8 +203,8 @@ const Contact = () => {
                 
                 <div className="space-y-8">
                   <div className="flex items-start gap-5">
-                    <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="text-goldDk" size={22} />
+                    <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="text-whiteDk" size={22} />
                     </div>
                     <div>
                       <h3 className="font-cormorant text-[18px] font-semibold text-dark2 mb-2">Address</h3>
@@ -215,8 +215,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-5">
-                    <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="text-goldDk" size={22} />
+                    <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="text-whiteDk" size={22} />
                     </div>
                     <div>
                       <h3 className="font-cormorant text-[18px] font-semibold text-dark2 mb-2">Phone</h3>
@@ -226,8 +226,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-5">
-                    <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="text-goldDk" size={22} />
+                    <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="text-whiteDk" size={22} />
                     </div>
                     <div>
                       <h3 className="font-cormorant text-[18px] font-semibold text-dark2 mb-2">Email</h3>
@@ -237,8 +237,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start gap-5">
-                    <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="text-goldDk" size={22} />
+                    <div className="w-12 h-12 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="text-whiteDk" size={22} />
                     </div>
                     <div>
                       <h3 className="font-cormorant text-[18px] font-semibold text-dark2 mb-2">Business Hours</h3>
@@ -257,7 +257,7 @@ const Contact = () => {
                 </p>
                 <a
                   href="tel:+27123456789"
-                  className="inline-block bg-gold text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-8 py-4 rounded hover:bg-goldLt transition-colors"
+                  className="inline-block bg-black text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-8 py-4 rounded hover:bg-gray-800 transition-colors"
                 >
                   Call Now: +27 12 345 6789
                 </a>
