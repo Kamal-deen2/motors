@@ -147,7 +147,7 @@ const Trucks = () => {
   return (
     <div className="bg-cream min-h-screen pt-[72px]">
       {/* Hero Section */}
-      <section className="bg-dark2 py-16 px-20">
+      <section className="bg-dark2 py-16 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <div className="mb-14">
             <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-3">Showroom</span>
@@ -266,7 +266,7 @@ const Trucks = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-24 px-20">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Filters Sidebar */}

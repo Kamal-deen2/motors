@@ -111,7 +111,7 @@ const Brands = () => {
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="mb-6">
-              <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-4">Our Brands</span>
+              <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-4">Our Brands</span>
               <h1 className="font-cormorant text-[clamp(52px,6vw,86px)] font-light leading-[1.05] text-white tracking-[-0.01em] mb-6">
                 Premium <em>Brands</em>
               </h1>
@@ -138,7 +138,7 @@ const Brands = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div className="absolute bottom-6 left-6 right-6">
-                      <div className="text-[10px] tracking-[0.15em] uppercase text-gold mb-2 font-medium">
+                      <div className="text-[10px] tracking-[0.15em] uppercase text-white mb-2 font-medium">
                         {brand.vehicleCount} Vehicles
                       </div>
                       <h3 className="font-cormorant text-[28px] font-semibold text-white">
@@ -154,7 +154,7 @@ const Brands = () => {
                     
                     <Link
                       to="/trucks"
-                      className="flex items-center gap-2 text-[12px] font-medium tracking-[0.06em] text-goldDk group-hover:text-gold group-hover:gap-3 transition-all"
+                      className="flex items-center gap-2 text-[12px] font-medium tracking-[0.06em] text-whiteDk group-hover:text-white group-hover:gap-3 transition-all"
                     >
                       View Inventory
                       <ArrowRight size={14} />
@@ -168,12 +168,12 @@ const Brands = () => {
       </section>
 
       {/* Featured Brand */}
-      <section className="py-20 px-20 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-4">Featured Brand</span>
+                <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-4">Featured Brand</span>
                 <h2 className="font-cormorant text-[clamp(40px,5vw,64px)] font-light text-dark2 mb-6">
                   Mercedes-<em>Benz</em>
                 </h2>
@@ -206,7 +206,7 @@ const Brands = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-20 bg-dark2">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20 bg-dark2">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="text-center mb-16">
@@ -220,21 +220,21 @@ const Brands = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white/6 border border-white/10 p-8 rounded-lg text-center">
-                <div className="font-mono text-[48px] font-medium text-gold mb-4">8+</div>
+                <div className="font-mono text-[48px] font-medium text-white mb-4">8+</div>
                 <div className="text-[12.5px] tracking-[0.1em] uppercase text-white/70">
                   Premium Brands
                 </div>
               </div>
 
               <div className="bg-white/6 border border-white/10 p-8 rounded-lg text-center">
-                <div className="font-mono text-[48px] font-medium text-gold mb-4">150+</div>
+                <div className="font-mono text-[48px] font-medium text-white mb-4">150+</div>
                 <div className="text-[12.5px] tracking-[0.1em] uppercase text-white/70">
                   Vehicles in Stock
                 </div>
               </div>
 
               <div className="bg-white/6 border border-white/10 p-8 rounded-lg text-center">
-                <div className="font-mono text-[48px] font-medium text-gold mb-4">100%</div>
+                <div className="font-mono text-[48px] font-medium text-white mb-4">100%</div>
                 <div className="text-[12.5px] tracking-[0.1em] uppercase text-white/70">
                   Certified Quality
                 </div>

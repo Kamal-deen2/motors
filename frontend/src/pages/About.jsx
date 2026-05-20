@@ -63,7 +63,7 @@ const About = () => {
   return (
     <div className="bg-cream min-h-screen pt-[72px]">
       {/* Hero Section */}
-      <section className="bg-dark2 py-24 px-20 relative overflow-hidden">
+      <section className="bg-dark2 py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 relative overflow-hidden">
         <div className="max-w-[1440px] mx-auto relative z-10">
           <FadeInSection>
             <div className="mb-6">
@@ -81,7 +81,7 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-24 px-20 bg-white">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeInSection>
@@ -167,7 +167,7 @@ const About = () => {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-24 px-20 bg-cream">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-cream">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="text-center mb-16">
@@ -222,7 +222,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 px-20 bg-white">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="text-center mb-16">

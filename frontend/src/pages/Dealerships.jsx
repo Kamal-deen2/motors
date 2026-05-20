@@ -225,7 +225,7 @@ const Dealerships = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 px-20 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -277,7 +277,7 @@ const Dealerships = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-20 bg-dark2">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20 bg-dark2">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="text-center">

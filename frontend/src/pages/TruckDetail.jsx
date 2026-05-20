@@ -109,7 +109,7 @@ const TruckDetail = () => {
     <div className="bg-cream min-h-screen pt-[72px]">
       {/* Breadcrumb */}
       <div className="bg-white border-b border-offWhDk">
-        <div className="max-w-[1440px] mx-auto px-20 py-4">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 py-4">
           <Link to="/trucks" className="flex items-center text-stone hover:text-whiteDk transition-colors">
             <ArrowLeft size={16} className="mr-2" />
             <span className="text-[12.5px] tracking-[0.06em] uppercase">Back to Showroom</span>
@@ -118,7 +118,7 @@ const TruckDetail = () => {
       </div>
 
       {/* Main Content */}
-      <section className="py-16 px-20">
+      <section className="py-16 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Images */}
@@ -165,7 +165,7 @@ const TruckDetail = () => {
 
                 {/* Thumbnails */}
                 {truck.images && truck.images.length > 1 && (
-                  <div className="grid grid-cols-5 gap-2">
+                  <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                     {truck.images.map((image, index) => (
                       <button
                         key={index}
@@ -211,7 +211,7 @@ const TruckDetail = () => {
                 <p className="text-[15px] text-stone leading-[1.7] mb-8">{truck.description}</p>
 
                 {/* Quick Specs */}
-                <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                   <div className="bg-white p-4 rounded-lg border border-offWhDk text-center">
                     <Calendar size={20} className="text-whiteDk mx-auto mb-2" />
                     <div className="text-[10.5px] tracking-[0.1em] uppercase text-stoneMd mb-1">Year</div>
@@ -282,7 +282,7 @@ const TruckDetail = () => {
       </section>
 
       {/* Specifications Tabs */}
-      <section className="py-16 px-20 bg-white">
+      <section className="py-16 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="mb-10">
@@ -393,7 +393,7 @@ const TruckDetail = () => {
       </section>
 
       {/* Financing Section */}
-      <section className="py-20 px-20 bg-dark2">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20 bg-dark2">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="text-center mb-12">

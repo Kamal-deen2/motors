@@ -223,9 +223,9 @@ const Home = () => {
       </div>
 
       {/* Search Section */}
-      <section className="bg-dark2 py-12 px-20">
+      <section className="bg-dark2 py-12 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1280px] mx-auto">
-          <div className="flex gap-0 mb-7 border-b border-white/10">
+          <div className="flex flex-wrap gap-0 mb-7 border-b border-white/10">
             <button className="text-[12.5px] font-normal tracking-[0.1em] uppercase text-white/45 px-5 py-2.5 relative transition-colors">
               New Vehicles
             </button>
@@ -237,7 +237,7 @@ const Home = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-5 gap-3 items-end">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-end">
             <div className="flex flex-col gap-2">
               <label className="text-[10.5px] tracking-[0.14em] uppercase text-white/40 font-normal">Brand</label>
               <select className="bg-white/6 border border-white/12 rounded px-4 py-3 text-[14px] text-white outline-none hover:border-white/25 hover:bg-white/9 focus:border-white transition-colors cursor-pointer">
@@ -289,7 +289,7 @@ const Home = () => {
       </section>
 
       {/* Brands Marquee */}
-      <section className="bg-dark1 py-15 overflow-hidden">
+      <section className="bg-dark1 py-12 overflow-hidden">
         <div className="flex animate-marquee hover:pause">
           {[...brands, ...brands].map((brand, index) => (
             <div
@@ -305,7 +305,7 @@ const Home = () => {
       </section>
 
       {/* Featured Vehicles */}
-      <section className="py-24 px-20 bg-white">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <div className="mb-14">
             <span className="text-[10.5px] tracking-[0.18em] uppercase text-gray-600 block mb-3">Featured</span>
@@ -395,27 +395,27 @@ const Home = () => {
       </section>
 
       {/* Stats Strip */}
-      <section className="bg-dark1 grid grid-cols-4 border-t border-white/6">
-        <div className="py-13 px-12 border-r border-white/6 text-center">
+      <section className="bg-dark1 grid grid-cols-2 sm:grid-cols-4 border-t border-white/6">
+        <div className="py-8 px-4 sm:py-10 sm:px-6 md:py-13 md:px-12 border-r border-white/6 text-center">
           <Counter target={38} suffix="+" />
           <div className="text-[12px] tracking-[0.12em] uppercase text-white/40 mt-2.5">Dealerships</div>
         </div>
-        <div className="py-13 px-12 border-r border-white/6 text-center">
+        <div className="py-8 px-4 sm:py-10 sm:px-6 md:py-13 md:px-12 border-r border-white/6 text-center">
           <Counter target={12} />
           <div className="text-[12px] tracking-[0.12em] uppercase text-white/40 mt-2.5">Premium Brands</div>
         </div>
-        <div className="py-13 px-12 border-r border-white/6 text-center">
+        <div className="py-8 px-4 sm:py-10 sm:px-6 md:py-13 md:px-12 border-r border-white/6 text-center">
           <Counter target={1400} suffix="+" />
           <div className="text-[12px] tracking-[0.12em] uppercase text-white/40 mt-2.5">Vehicles</div>
         </div>
-        <div className="py-13 px-12 text-center">
+        <div className="py-8 px-4 sm:py-10 sm:px-6 md:py-13 md:px-12 text-center">
           <Counter target={25} suffix="yrs" />
           <div className="text-[12px] tracking-[0.12em] uppercase text-white/40 mt-2.5">Excellence</div>
         </div>
       </section>
 
       {/* News Section */}
-      <section className="py-24 px-20 bg-white">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
         <div className="max-w-[1440px] mx-auto">
           <div className="mb-14">
             <span className="text-[10.5px] tracking-[0.18em] uppercase text-gray-600 block mb-3">Stories & Insights</span>
@@ -424,7 +424,7 @@ const Home = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsItems.map((item, index) => (
               <FadeInSection key={index} delay={index * 100}>
                 <div className="cursor-pointer group">
@@ -449,7 +449,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-20 bg-dark2 text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20 bg-dark2 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
