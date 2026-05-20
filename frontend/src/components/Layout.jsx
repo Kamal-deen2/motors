@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingCart, User, Search } from 'lucide-react';
+import { Menu, X, ShoppingCart, User, Search, ChevronDown } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 
 const Layout = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [hoveredMenu, setHoveredMenu] = useState(null);
   const { user, logout } = useAuth();
   const { cart } = useCart();
   const location = useLocation();
@@ -14,117 +16,187 @@ const Layout = ({ children }) => {
   const isAuthPage = ['/login', '/register'].includes(location.pathname);
   const isAdminPage = location.pathname.startsWith('/admin');
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
+    <div className="min-h-screen flex flex-col bg-cream font-dm">
+      {/* Navigation */}
       {!isAuthPage && (
-        <header className="bg-white shadow-sm sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              {/* Logo */}
-              <Link to="/" className="flex items-center space-x-2">
-                <div className="bg-primary-600 text-white px-3 py-1 rounded font-bold text-xl">
-                  PM
-                </div>
-                <span className="text-xl font-bold text-gray-900">Prime Motors</span>
-              </Link>
+        <nav className={`fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-400 ${scrolled ? 'bg-black/97 backdrop-blur-md shadow-lg' : ''}`}>
+        <div className="max-w-[1440px] mx-auto px-10 h-full flex items-center gap-10">
+          {/* Logo */}
+          <Link to="/" className="font-cormorant text-[22px] font-semibold text-white tracking-[0.12em] uppercase flex-shrink-0 cursor-pointer">
+            PRIME<span className="text-goldLt">.</span>
+          </Link>
 
-              {/* Desktop Navigation */}
-              <nav className="hidden md:flex space-x-8">
-                <Link to="/" className="text-gray-700 hover:text-primary-600 transition">Home</Link>
-                <Link to="/trucks" className="text-gray-700 hover:text-primary-600 transition">Trucks</Link>
-                <Link to="/about" className="text-gray-700 hover:text-primary-600 transition">About</Link>
-                <Link to="/contact" className="text-gray-700 hover:text-primary-600 transition">Contact</Link>
-                {isAdmin && (
-                  <Link to="/admin" className="text-gray-700 hover:text-primary-600 transition">Admin</Link>
-                )}
-              </nav>
-
-              {/* Right side icons */}
-              <div className="hidden md:flex items-center space-x-4">
-                <Link to="/trucks" className="text-gray-700 hover:text-primary-600">
-                  <Search size={20} />
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-1 flex-1">
+            <ul className="hidden lg:flex items-center gap-8">
+              <li>
+                <Link to="/trucks" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                  Showroom
                 </Link>
-                {user ? (
-                  <>
-                    <Link to="/cart" className="relative text-gray-700 hover:text-primary-600">
-                      <ShoppingCart size={20} />
-                      {cart.count > 0 && (
-                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                          {cart.count}
-                        </span>
-                      )}
-                    </Link>
-                    <Link to="/dashboard" className="text-gray-700 hover:text-primary-600">
-                      <User size={20} />
-                    </Link>
-                    <button
-                      onClick={logout}
-                      className="text-gray-700 hover:text-red-600 transition"
-                    >
-                      Logout
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <Link to="/cart" className="relative text-gray-700 hover:text-primary-600">
-                      <ShoppingCart size={20} />
-                      {cart.count > 0 && (
-                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                          {cart.count}
-                        </span>
-                      )}
-                    </Link>
-                    <Link to="/login" className="text-gray-700 hover:text-primary-600">
-                      Login
-                    </Link>
-                    <Link
-                      to="/register"
-                      className="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition"
-                    >
-                      Register
-                    </Link>
-                  </>
-                )}
-              </div>
-
-              {/* Mobile menu button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-gray-700"
+              </li>
+              <li
+                className="relative group"
+                onMouseEnter={() => setHoveredMenu('about')}
+                onMouseLeave={() => setHoveredMenu(null)}
               >
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+                <button className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors flex items-center gap-1">
+                  About
+                  <ChevronDown size={14} className={`transition-transform ${hoveredMenu === 'about' ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {/* Mega Menu */}
+                {hoveredMenu === 'about' && (
+                  <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[600px] bg-white rounded-lg shadow-2xl shadow-black/12 py-6 px-8 z-50">
+                    <div className="grid grid-cols-2 gap-8">
+                      <div>
+                        <div className="text-[10.5px] tracking-[0.14em] uppercase text-stoneMd mb-4 font-medium">Company</div>
+                        <ul className="space-y-3">
+                          <li>
+                            <Link to="/about" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">Our Story</Link>
+                          </li>
+                          <li>
+                            <Link to="/about" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">Our Team</Link>
+                          </li>
+                          <li>
+                            <Link to="/about" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">Careers</Link>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div className="text-[10.5px] tracking-[0.14em] uppercase text-stoneMd mb-4 font-medium">Resources</div>
+                        <ul className="space-y-3">
+                          <li>
+                            <Link to="/news" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">News & Insights</Link>
+                          </li>
+                          <li>
+                            <Link to="/contact" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">Contact Us</Link>
+                          </li>
+                          <li>
+                            <Link to="/contact" className="text-[14px] text-dark2 hover:text-goldDk transition-colors">FAQ</Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </li>
+              <li>
+                <Link to="/brands" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                  Brands
+                </Link>
+              </li>
+              <li>
+                <Link to="/dealerships" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                  Dealerships
+                </Link>
+              </li>
+              <li>
+                <Link to="/news" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                  News
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-[12.5px] font-medium tracking-[0.06em] text-white/90 hover:text-gold transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+            <div className="hidden md:flex items-center gap-3 ml-auto flex-shrink-0">
+              <Link to="/trucks" className="w-9.5 h-9.5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/8 rounded-full transition-colors">
+                <Search size={17} />
+              </Link>
+              {user ? (
+                <>
+                  <Link to="/cart" className="relative text-white/72 hover:text-white">
+                    <ShoppingCart size={20} />
+                    {cart.count > 0 && (
+                      <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                        {cart.count}
+                      </span>
+                    )}
+                  </Link>
+                  <Link to="/dashboard" className="text-white/72 hover:text-white">
+                    <User size={20} />
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className="text-[12px] text-white/70 border border-white/25 px-5 py-2 rounded hover:border-white hover:text-white transition-colors uppercase tracking-[0.06em]"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link to="/cart" className="relative text-white/72 hover:text-white">
+                    <ShoppingCart size={20} />
+                    {cart.count > 0 && (
+                      <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                        {cart.count}
+                      </span>
+                    )}
+                  </Link>
+                  <Link to="/login" className="text-[12px] text-white/70 border border-white/25 px-5 py-2 rounded hover:border-white hover:text-white transition-colors uppercase tracking-[0.06em]">
+                    Login
+                  </Link>
+                  <Link
+                    to="/register"
+                    className="text-[12px] bg-gold text-white px-5 py-2 rounded hover:bg-goldLt transition-colors uppercase tracking-[0.06em]"
+                  >
+                    Register
+                  </Link>
+                </>
+              )}
             </div>
-          </div>
 
-          {/* Mobile menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden bg-white border-t">
-              <div className="px-4 py-3 space-y-3">
-                <Link to="/" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                <Link to="/trucks" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Trucks</Link>
-                <Link to="/about" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>About</Link>
-                <Link to="/contact" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-                {isAdmin && (
-                  <Link to="/admin" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Admin</Link>
-                )}
-                {user ? (
-                  <>
-                    <Link to="/cart" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Cart ({cart.count})</Link>
-                    <Link to="/dashboard" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Dashboard</Link>
-                    <button onClick={() => { logout(); setMobileMenuOpen(false); }} className="block text-red-600">Logout</button>
-                  </>
-                ) : (
-                  <>
-                    <Link to="/login" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Login</Link>
-                    <Link to="/register" className="block text-gray-700 hover:text-primary-600" onClick={() => setMobileMenuOpen(false)}>Register</Link>
-                  </>
-                )}
-              </div>
-            </div>
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden flex flex-col gap-1.5 w-7 cursor-pointer ml-auto"
+            >
+              <span className={`h-[1px] bg-white transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+              <span className={`h-[1px] bg-white transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`h-[1px] bg-white transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+            </button>
+          </div>
+        </div>
+        </nav>
+      )}
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className={`fixed top-[72px] left-0 right-0 bottom-0 bg-dark1 z-49 p-8 overflow-y-auto transition-transform duration-400 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <Link to="/" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+          <Link to="/trucks" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Showroom</Link>
+          <Link to="/brands" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Brands</Link>
+          <Link to="/dealerships" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Dealerships</Link>
+          <Link to="/news" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>News</Link>
+          <Link to="/about" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+          <Link to="/contact" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+          {isAdmin && (
+            <Link to="/admin" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Admin</Link>
           )}
-        </header>
+          {user ? (
+            <>
+              <Link to="/cart" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Cart ({cart.count})</Link>
+              <Link to="/dashboard" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Dashboard</Link>
+              <button onClick={() => { logout(); setMobileMenuOpen(false); }} className="block font-cormorant text-[18px] font-normal text-white py-3.5 cursor-pointer">Logout</button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Login</Link>
+              <Link to="/register" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Register</Link>
+            </>
+          )}
+        </div>
       )}
 
       {/* Main content */}
@@ -134,58 +206,78 @@ const Layout = ({ children }) => {
 
       {/* Footer */}
       {!isAuthPage && !isAdminPage && (
-        <footer className="bg-gray-900 text-white mt-auto">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {/* Company Info */}
+        <footer className="bg-dark1 text-white pt-20 pb-10 px-20 border-t border-white/6">
+          <div className="max-w-[1440px] mx-auto">
+            <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-16 mb-18">
+              {/* Brand */}
               <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="bg-primary-600 text-white px-3 py-1 rounded font-bold">PM</div>
-                  <span className="text-xl font-bold">Prime Motors</span>
+                <div className="font-cormorant text-[20px] font-semibold text-white tracking-[0.12em] uppercase mb-4">
+                  PRIME<span className="text-goldLt">.</span>
                 </div>
-                <p className="text-gray-400">
-                  Your trusted partner for quality trucks and exceptional service.
+                <p className="text-[14px] text-white/40 leading-relaxed max-w-[260px] mb-7">
+                  Your trusted partner for premium vehicles and exceptional service.
                 </p>
+                <div className="flex gap-2.5">
+                  <button className="w-9 h-9 border border-white/15 rounded-full flex items-center justify-center text-white/50 hover:border-gold hover:text-goldLt transition-colors">
+                    <svg viewBox="0 0 24 24" width="15" height="15" strokeWidth="1.5" fill="none" stroke="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </button>
+                  <button className="w-9 h-9 border border-white/15 rounded-full flex items-center justify-center text-white/50 hover:border-gold hover:text-goldLt transition-colors">
+                    <svg viewBox="0 0 24 24" width="15" height="15" strokeWidth="1.5" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </button>
+                  <button className="w-9 h-9 border border-white/15 rounded-full flex items-center justify-center text-white/50 hover:border-gold hover:text-goldLt transition-colors">
+                    <svg viewBox="0 0 24 24" width="15" height="15" strokeWidth="1.5" fill="none" stroke="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </button>
+                </div>
               </div>
 
               {/* Quick Links */}
               <div>
-                <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-                <ul className="space-y-2 text-gray-400">
-                  <li><Link to="/" className="hover:text-white transition">Home</Link></li>
-                  <li><Link to="/trucks" className="hover:text-white transition">Trucks</Link></li>
-                  <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-                  <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
-                </ul>
+                <div className="text-[10.5px] font-medium tracking-[0.16em] uppercase text-white/50 mb-5">Quick Links</div>
+                <Link to="/" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Home</Link>
+                <Link to="/trucks" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Showroom</Link>
+                <Link to="/brands" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Brands</Link>
+                <Link to="/dealerships" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Dealerships</Link>
+                <Link to="/news" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">News</Link>
+                <Link to="/about" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">About Us</Link>
+                <Link to="/contact" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Contact</Link>
               </div>
 
-              {/* Truck Categories */}
+              {/* Brands */}
               <div>
-                <h3 className="text-lg font-semibold mb-4">Categories</h3>
-                <ul className="space-y-2 text-gray-400">
-                  <li>Semi Trucks</li>
-                  <li>Dump Trucks</li>
-                  <li>Pickup Trucks</li>
-                  <li>Box Trucks</li>
-                  <li>Refrigerated Trucks</li>
-                  <li>Flatbed Trucks</li>
-                </ul>
+                <div className="text-[10.5px] font-medium tracking-[0.16em] uppercase text-white/50 mb-5">Brands</div>
+                <Link to="/trucks" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">BMW</Link>
+                <Link to="/trucks" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Land Rover</Link>
+                <Link to="/trucks" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Jaguar</Link>
+                <Link to="/trucks" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Toyota</Link>
+                <Link to="/trucks" className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Lexus</Link>
               </div>
 
-              {/* Contact Info */}
+              {/* Services */}
               <div>
-                <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-                <ul className="space-y-2 text-gray-400">
-                  <li>📍 123 Truck Lane, Detroit, MI 48201</li>
-                  <li>📞 (555) 123-4567</li>
-                  <li>✉️ info@primemotors.com</li>
-                  <li>🕐 Mon-Fri: 9AM - 6PM</li>
-                </ul>
+                <div className="text-[10.5px] font-medium tracking-[0.16em] uppercase text-white/50 mb-5">Services</div>
+                <span className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Book a Service</span>
+                <span className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Test Drive</span>
+                <span className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Finance</span>
+                <span className="block text-[13.5px] text-white/40 hover:text-goldLt mb-2.5 transition-colors cursor-pointer">Insurance</span>
+              </div>
+
+              {/* Contact */}
+              <div>
+                <div className="text-[10.5px] font-medium tracking-[0.16em] uppercase text-white/50 mb-5">Contact</div>
+                <span className="block text-[13.5px] text-white/40 mb-2.5">📍 123 Truck Lane, Detroit, MI</span>
+                <span className="block text-[13.5px] text-white/40 mb-2.5">📞 (555) 123-4567</span>
+                <span className="block text-[13.5px] text-white/40 mb-2.5">✉️ info@primemotors.com</span>
               </div>
             </div>
 
-            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; {new Date().getFullYear()} Prime Motors. All rights reserved.</p>
+            <div className="flex justify-between items-center pt-7 border-t border-white/6">
+              <p className="text-[12px] text-white/25">
+                &copy; {new Date().getFullYear()} Prime Motors. All rights reserved.
+              </p>
+              <div className="flex items-center gap-1.5 text-[11px] text-white/25 tracking-[0.08em] uppercase">
+                <span className="w-1.25 h-1.25 rounded-full bg-gold opacity-70"></span>
+                Premium Automotive Group
+              </div>
             </div>
           </div>
         </footer>

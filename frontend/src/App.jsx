@@ -8,6 +8,9 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Trucks from './pages/Trucks';
 import TruckDetail from './pages/TruckDetail';
+import News from './pages/News';
+import Brands from './pages/Brands';
+import Dealerships from './pages/Dealerships';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Cart from './pages/Cart';
@@ -29,6 +32,9 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/trucks" element={<Trucks />} />
               <Route path="/trucks/:id" element={<TruckDetail />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/brands" element={<Brands />} />
+              <Route path="/dealerships" element={<Dealerships />} />
               
               {/* Auth Routes */}
               <Route path="/login" element={<Login />} />
