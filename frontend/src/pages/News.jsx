@@ -109,7 +109,7 @@ const News = () => {
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="mb-6">
-              <span className="text-[10.5px] tracking-[0.18em] uppercase text-gold block mb-4">News & Insights</span>
+              <span className="text-[10.5px] tracking-[0.18em] uppercase text-white block mb-4">News & Insights</span>
               <h1 className="font-cormorant text-[clamp(52px,6vw,86px)] font-light leading-[1.05] text-white tracking-[-0.01em] mb-6">
                 Latest <em>News</em>
               </h1>
@@ -176,7 +176,7 @@ const News = () => {
                       </div>
                     </div>
                     
-                    <h3 className="font-cormorant text-[20px] font-semibold text-dark2 leading-[1.3] mb-3 group-hover:text-goldDk transition-colors">
+                    <h3 className="font-cormorant text-[20px] font-semibold text-dark2 leading-[1.3] mb-3 group-hover:text-whiteDk transition-colors">
                       {news.title}
                     </h3>
                     
@@ -186,7 +186,7 @@ const News = () => {
                     
                     <Link
                       to="#"
-                      className="flex items-center gap-2 text-[12px] font-medium tracking-[0.06em] text-goldDk group-hover:text-gold group-hover:gap-3 transition-all"
+                      className="flex items-center gap-2 text-[12px] font-medium tracking-[0.06em] text-whiteDk group-hover:text-white group-hover:gap-3 transition-all"
                     >
                       Read More
                       <ArrowRight size={14} />
@@ -221,11 +221,11 @@ const News = () => {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="flex-1 px-5 py-4 bg-white/6 border border-white/12 rounded text-white placeholder-white/40 outline-none focus:border-gold transition-colors"
+                  className="flex-1 px-5 py-4 bg-white/6 border border-white/12 rounded text-white placeholder-white/40 outline-none focus:border-black transition-colors"
                 />
                 <button
                   type="submit"
-                  className="bg-gold text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-8 py-4 rounded hover:bg-goldLt transition-colors"
+                  className="bg-black text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-8 py-4 rounded hover:bg-gray-800 transition-colors"
                 >
                   Subscribe
                 </button>
