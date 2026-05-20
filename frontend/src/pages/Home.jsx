@@ -3,85 +3,28 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Search, Menu, X, ChevronRight } from 'lucide-react';
 import { FadeInSection } from '../components/FadeInSection';
 
-const FadeInSection = ({ children, delay = 0 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [ref, setRef] = useState(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    if (ref) observer.observe(ref);
-
-    return () => {
-      if (ref) observer.unobserve(ref);
-    };
-  }, [ref]);
-
-  return (
-    <div
-      ref={setRef}
-      className={`transition-all duration-700 ease-luxury transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Counter = ({ target, suffix = '' }) => {
+const Counter = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
+    let startTime;
+    let animationFrame;
 
-    if (ref.current) observer.observe(ref.current);
-
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(Math.floor(progress * end));
+      
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
     };
-  }, []);
 
-  useEffect(() => {
-    if (!isVisible) return;
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [end, duration]);
 
-    const duration = 1800;
-    const steps = 60;
-    const stepDuration = duration / steps;
-    const increment = target / steps;
-    let current = 0;
-
-    const timer = setInterval(() => {
-      current = Math.min(current + increment, target);
-      setCount(Math.floor(current));
-      if (current >= target) clearInterval(timer);
-    }, stepDuration);
-
-    return () => clearInterval(timer);
-  }, [isVisible, target]);
-
-  return (
-    <span ref={ref} className="font-mono text-[28px] font-medium text-white">
-      {count.toLocaleString()}<span className="text-[14px] text-goldLt ml-0.5">{suffix}</span>
-    </span>
-  );
+  return count;
 };
 
 const Home = () => {
