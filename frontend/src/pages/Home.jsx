@@ -140,7 +140,7 @@ const Home = () => {
   return (
     <div className="bg-cream">
       {/* Hero Section */}
-      <section className="relative h-[100vh] min-h-[600px] overflow-hidden">
+      <section className="relative h-[100vh] min-h-[500px] sm:min-h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           {heroSlides.map((slide, index) => (
             <div
@@ -151,94 +151,75 @@ const Home = () => {
             >
               <img
                 src={slide.image}
-                alt={`Hero slide ${index + 1}`}
-                className="w-full h-full object-cover animate-kenburns"
+                alt={slide.title}
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-black/82 via-black/45 to-black/25"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
             </div>
           ))}
         </div>
 
-        <div className="relative z-10 h-full flex flex-col justify-center px-20 max-w-[900px]">
-          <div className="flex items-center gap-2 mb-6 animate-fade-up">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold"></span>
-            <span className="text-[11px] tracking-[0.18em] uppercase text-goldLt">Premium Automotive Group</span>
-          </div>
-
-          <h1
-            className="font-cormorant text-[clamp(52px,6vw,86px)] font-light leading-[1.05] text-white tracking-[-0.01em] mb-5"
-            style={{
-              opacity: titleOpacity,
-              transform: titleTransform,
-              transition: 'opacity 0.5s, transform 0.5s',
-            }}
-            dangerouslySetInnerHTML={{ __html: heroTitle }}
-          />
-
-          <p className="text-[16px] font-light text-white/62 max-w-[480px] leading-[1.7] mb-10 tracking-[0.01em] animate-fade-up" style={{ animationDelay: '0.5s' }}>
-            South Africa's premier multi-brand automotive group. Discover an unrivalled selection of new and pre-owned vehicles across world-class brands.
-          </p>
-
-          <div className="flex gap-3.5 flex-wrap animate-fade-up" style={{ animationDelay: '0.65s' }}>
-            <Link
-              to="/trucks"
-              className="inline-flex items-center gap-2.5 bg-gold text-white text-[12.5px] font-medium tracking-[0.1em] uppercase px-8 py-3.5 rounded transition-all hover:bg-goldLt hover:-translate-y-0.5"
-            >
-              Browse Showroom
-              <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2.5 text-white text-[12.5px] font-normal tracking-[0.1em] uppercase px-8 py-3.5 border border-white/35 rounded transition-all hover:bg-white/8 hover:border-white/70"
-            >
-              Our Story
-            </Link>
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 w-full">
+            <FadeInSection>
+              <h1
+                className="font-cormorant text-[clamp(36px,5vw,64px)] sm:text-[clamp(40px,5vw,68px)] lg:text-[clamp(52px,6vw,86px)] font-light text-white leading-[1.05] mb-4 sm:mb-6"
+                dangerouslySetInnerHTML={{ __html: heroTitle }}
+              />
+              <p className="text-[14px] sm:text-[16px] md:text-[18px] text-white/70 mb-6 sm:mb-8 md:mb-10 max-w-[500px] sm:max-w-[600px] leading-relaxed">
+                Discover exceptional vehicles crafted for those who demand excellence.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Link
+                  to="/trucks"
+                  className="bg-gold text-white px-6 sm:px-8 py-3 sm:py-4 rounded text-[12px] sm:text-[13px] font-medium tracking-[0.06em] uppercase hover:bg-goldLt transition-colors text-center"
+                >
+                  Explore Vehicles
+                </Link>
+                <Link
+                  to="/about"
+                  className="border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded text-[12px] sm:text-[13px] font-medium tracking-[0.06em] uppercase hover:border-white hover:text-white transition-colors text-center"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </FadeInSection>
           </div>
         </div>
 
-        {/* Hero Dots */}
-        <div className="absolute bottom-9 left-20 z-10 flex gap-2.5">
-          {[0, 1, 2].map((index) => (
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3 z-20">
+          {heroSlides.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-6 h-0.5 rounded transition-all duration-350 ${
-                index === currentSlide ? 'w-12 bg-gold' : 'bg-white/25'
+              className={`w-8 sm:w-12 h-[2px] rounded-full transition-all ${
+                index === currentSlide ? 'bg-gold w-8 sm:w-12' : 'bg-white/30 w-6 sm:w-8'
               }`}
             />
           ))}
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute right-12 bottom-12 z-10 flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-          <span className="text-[10px] tracking-[0.2em] uppercase text-white/40 writing-mode-vertical-rl rotate-180">
-            Scroll
-          </span>
-          <div className="w-px h-10 bg-gradient-to-b from-transparent to-white/40 overflow-hidden relative">
-            <div className="absolute top-0 left-0 right-0 h-full bg-gold animate-scroll-pulse"></div>
-          </div>
-        </div>
-
-        {/* Hero Stats */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 grid grid-cols-4 border-t border-white/10">
-          <div className="p-5.5 bg-black/65 backdrop-blur-md border-r border-white/8 hover:bg-black/82 transition-colors">
-            <Counter target={38} suffix="+" />
-            <div className="text-[11.5px] text-white/45 mt-1 tracking-[0.06em]">Dealerships Nationwide</div>
-          </div>
-          <div className="p-5.5 bg-black/65 backdrop-blur-md border-r border-white/8 hover:bg-black/82 transition-colors">
-            <Counter target={12} />
-            <div className="text-[11.5px] text-white/45 mt-1 tracking-[0.06em]">Premium Brands</div>
-          </div>
-          <div className="p-5.5 bg-black/65 backdrop-blur-md border-r border-white/8 hover:bg-black/82 transition-colors">
-            <Counter target={1400} suffix="+" />
-            <div className="text-[11.5px] text-white/45 mt-1 tracking-[0.06em]">Vehicles Available</div>
-          </div>
-          <div className="p-5.5 bg-black/65 backdrop-blur-md hover:bg-black/82 transition-colors">
-            <Counter target={25} suffix="yrs" />
-            <div className="text-[11.5px] text-white/45 mt-1 tracking-[0.06em]">Industry Excellence</div>
-          </div>
-        </div>
       </section>
+
+      {/* Hero Stats */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 grid grid-cols-2 sm:grid-cols-4 border-t border-white/10">
+        <div className="p-3.5 sm:p-5.5 bg-black/65 backdrop-blur-md border-r border-t-white/8 sm:border-r border-white/8 hover:bg-black/82 transition-colors">
+          <Counter target={38} suffix="+" />
+          <div className="text-[10px] sm:text-[11.5px] text-white/45 mt-1 tracking-[0.06em]">Dealerships Nationwide</div>
+        </div>
+        <div className="p-3.5 sm:p-5.5 bg-black/65 backdrop-blur-md border-r border-t-white/8 sm:border-r border-white/8 hover:bg-black/82 transition-colors">
+          <Counter target={12} />
+          <div className="text-[10px] sm:text-[11.5px] text-white/45 mt-1 tracking-[0.06em]">Premium Brands</div>
+        </div>
+        <div className="p-3.5 sm:p-5.5 bg-black/65 backdrop-blur-md border-r border-t-white/8 sm:border-r border-white/8 hover:bg-black/82 transition-colors">
+          <Counter target={1400} suffix="+" />
+          <div className="text-[10px] sm:text-[11.5px] text-white/45 mt-1 tracking-[0.06em]">Vehicles Available</div>
+        </div>
+        <div className="p-3.5 sm:p-5.5 bg-black/65 backdrop-blur-md hover:bg-black/82 transition-colors">
+          <Counter target={25} suffix="yrs" />
+          <div className="text-[10px] sm:text-[11.5px] text-white/45 mt-1 tracking-[0.06em]">Industry Excellence</div>
+        </div>
+      </div>
 
       {/* Search Section */}
       <section className="bg-dark2 py-12 px-20">
