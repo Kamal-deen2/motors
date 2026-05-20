@@ -173,7 +173,7 @@ const Layout = ({ children }) => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className={`fixed top-[72px] left-0 right-0 bottom-0 bg-dark1 z-49 p-8 overflow-y-auto transition-transform duration-400 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`fixed top-[72px] left-0 right-0 bottom-0 bg-dark1 z-[60] p-6 sm:p-8 overflow-y-auto transition-transform duration-400 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <Link to="/" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Home</Link>
           <Link to="/trucks" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Showroom</Link>
           <Link to="/brands" className="block font-cormorant text-[18px] font-normal text-white py-3.5 border-b border-white/8 tracking-[0.04em] cursor-pointer" onClick={() => setMobileMenuOpen(false)}>Brands</Link>
