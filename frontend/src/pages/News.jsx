@@ -105,7 +105,7 @@ const News = () => {
   return (
     <div className="bg-cream min-h-screen pt-[72px]">
       {/* Hero Section */}
-      <section className="bg-dark2 py-24 px-20">
+      <section className="bg-dark2 py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="mb-6">
@@ -122,7 +122,7 @@ const News = () => {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 px-20 bg-white border-b border-offWhDk">
+      <section className="py-6 sm:py-8 px-4 sm:px-6 md:px-10 lg:px-20 bg-white border-b border-offWhDk">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="flex gap-4 overflow-x-auto pb-2">
@@ -145,7 +145,7 @@ const News = () => {
       </section>
 
       {/* News Grid */}
-      <section className="py-20 px-20">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-offWhDk">
             {filteredNews.map((news, index) => (
@@ -206,7 +206,7 @@ const News = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 px-20 bg-dark2">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20 bg-dark2">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="max-w-2xl mx-auto text-center">

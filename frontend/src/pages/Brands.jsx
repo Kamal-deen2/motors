@@ -107,7 +107,7 @@ const Brands = () => {
   return (
     <div className="bg-cream min-h-screen pt-[72px]">
       {/* Hero Section */}
-      <section className="bg-dark2 py-24 px-20">
+      <section className="bg-dark2 py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="mb-6">
@@ -124,7 +124,7 @@ const Brands = () => {
       </section>
 
       {/* Brands Grid */}
-      <section className="py-20 px-20">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-offWhDk">
             {brands.map((brand, index) => (

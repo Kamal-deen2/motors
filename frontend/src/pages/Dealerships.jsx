@@ -117,7 +117,7 @@ const Dealerships = () => {
   return (
     <div className="bg-cream min-h-screen pt-[72px]">
       {/* Hero Section */}
-      <section className="bg-dark2 py-24 px-20">
+      <section className="bg-dark2 py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="mb-6">
@@ -134,7 +134,7 @@ const Dealerships = () => {
       </section>
 
       {/* Region Filter */}
-      <section className="py-8 px-20 bg-white border-b border-offWhDk">
+      <section className="py-6 sm:py-8 px-4 sm:px-6 md:px-10 lg:px-20 bg-white border-b border-offWhDk">
         <div className="max-w-[1440px] mx-auto">
           <FadeInSection>
             <div className="flex gap-4 overflow-x-auto pb-2">
@@ -157,7 +157,7 @@ const Dealerships = () => {
       </section>
 
       {/* Dealerships Grid */}
-      <section className="py-20 px-20">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredDealerships.map((dealership, index) => (
